@@ -8,13 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -22,21 +22,25 @@ public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
     private DatabaseReference mDatabaseRef;
     private EditText mEtEmail, mEtPwd;
-    private Button mBtnRegister,mBtnLogin;
+    private Button mBtnLogin;
+    private TextView mBtnRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
+        View backTo=findViewById(R.id.back_to);
+        backTo.setOnClickListener(view->{
+            startActivity(new Intent(this,MainActivity.class));
+        });
         mFirebaseAuth = FirebaseAuth.getInstance();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference();
 
-        mEtEmail = findViewById(R.id.et_email);
-        mEtPwd = findViewById(R.id.et_pwd);
-        mBtnRegister = findViewById(R.id.btn_register);
-        mBtnLogin = findViewById(R.id.btn_log);
+        mEtEmail = findViewById(R.id.edit_email);
+        mEtPwd = findViewById(R.id.edit_password);
+        mBtnRegister = findViewById(R.id.intent_sign_up);
+        mBtnLogin = findViewById(R.id.login_btn);
 
         mBtnLogin.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,18 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+    <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/image_1"/>
+    <TextView android:id="@+id/walker" android:layout_width="210dp" android:layout_height="45dp" android:fontFamily="@font/roboto_bold" android:text="WALKER’S" android:textStyle="bold" android:textColor="@color/white" android:textSize="35sp" android:layout_marginStart="70dp" android:layout_marginTop="338dp"/>
+    <TextView android:layout_width="210dp" android:layout_height="45dp" android:fontFamily="@font/roboto_bold" android:text="HIGH" android:textColor="@color/white" android:textSize="35sp" android:textStyle="bold" android:layout_marginStart="205dp" android:layout_below="@+id/walker"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="65dp" android:weightSum="2" android:layout_marginHorizontal="17dp" android:orientation="horizontal" android:layout_alignParentBottom="true" android:layout_marginBottom="50dp">
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/register_btn" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="register" android:textColor="@color/white" android:fontFamily="@font/roboto_bold" android:textSize="13sp" android:background="@drawable/button_bc"/>
+        <androidx.appcompat.widget.AppCompatButton android:id="@+id/login_btn" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="log in" android:textColor="@color/black" android:fontFamily="@font/roboto_bold" android:textStyle="bold" android:textSize="13sp" android:layout_marginStart="15dp" android:background="@drawable/login_btn_bc"/>
+    </LinearLayout>
+</RelativeLayout>
